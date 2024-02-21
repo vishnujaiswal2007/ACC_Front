@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/vishnujaiswal2007/ACC_Front/issues"
   },
-  "homepage": "https://github.com/vishnujaiswal2007/ACC_Front#readme"
+  "homepage": "https://github.com/vishnujaiswal2007/ACC_Front#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  }
 }
