@@ -5,11 +5,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- With CDN Link -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+
+  <!-- Without CDN link -->
+  <link rel="stylesheet" href="main.css">
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/jquery-3.7.1.js"></script>
+  <link rel="icon" type="image/x-icon" href="/images/newlogo.jpeg">
+
+  
   <link rel="icon" type="image/x-icon" href="./uoalogo.jpeg">
-  <title>Personal Pathrak</title>
+  <title>Personel Entry Form</title>
 </head>
 
 <body onload="originally()">
@@ -90,176 +101,6 @@
           required>
       </div>
 
-      <div class="pt-5">
-        <label><b>Educational Qualification : </b></label>
-        <!-- <div class="pt-2"> -->
-        <div class="form-check form-check-inline">
-          <input type="checkbox" class="form-check-input" name="metric" id="metric"
-            onclick="document.getElementById('metric_details').hidden = !this.checked, document.getElementById('10_doc').hidden = !this.checked"
-            onchange="functionmetric()">
-          <label class="form-check-label" for="metric">High School/Metric (10)</label>
-        </div>
-
-
-        <div class="form-check form-check-inline">
-          <input type="checkbox" class="form-check-input" name="inter" id="inter"
-            onclick="document.getElementById('inter_details').hidden = !this.checked, document.getElementById('12_doc').hidden = !this.checked"
-            onchange="functioninter()">
-          <label class="form-check-label" for="inter">Intermediate (10+2)</label>
-        </div>
-
-
-
-        <div class="form-check form-check-inline">
-          <input type="checkbox" class="form-check-input" name="graduate" id="ug"
-            onclick="document.getElementById('ug_details').hidden = !this.checked, document.getElementById('ug_doc').hidden = !this.checked"
-            onchange="functionug()">
-          <label class="form-check-label" for="ug">Under Graduate</label>
-        </div>
-
-
-        <div class="form-check form-check-inline">
-          <input type="checkbox" class="form-check-input" name="pg" id="pg"
-            onclick="document.getElementById('pg_details').hidden = !this.checked, document.getElementById('pg_doc').hidden = !this.checked"
-            onchange="functionpg()">
-          <label class="form-check-label" for="pg">Post Graduate</label>
-        </div>
-
-
-        <div class="form-check form-check-inline">
-          <input type="checkbox" class="form-check-input" name="phd" id="phd"
-            onclick="document.getElementById('res_details').hidden = !this.checked, document.getElementById('res_doc').hidden = !this.checked"
-            onchange="functionres()">
-          <label class="form-check-label" for="phd">Ph.D</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-          <input type="checkbox" class="form-check-input" name="other" id="other"
-            onclick="document.getElementById('oth_details').hidden = !this.checked, document.getElementById('oth_doc').hidden = !this.checked"
-            onchange="functionoth()">
-          <label class="form-check-label" for="other">Other</label>
-          <!-- <input type="text" name="other_v" id="other_v" disabled> -->
-        </div><br>
-        <summary class="ms-2">Need to Upload Photograph of all Certificates for Educational Verification</summary><br>
-
-        <!-- </div> -->
-
-        <div class=" pt-1 my- border">
-          <div id="metric_details" hidden>
-            <label><b>Details of High School/Metric (10) : </b></label> <br>
-            <input class="ms-5" type="text" placeholder="Name of Institution" name="metric_inst" id="metric_inst">
-            <input class="ms-5" type="text" placeholder="Board" name="metric_board" id="metric_board">
-            <input class="ms-5" type="text" placeholder="Year of Passing" name="metric_year" id="metric_year">
-            <input class="ms-5" type="text" placeholder="(%) Overall Percentage" name="metric_percent"
-              id="metric_percent"><br>
-          </div><br>
-
-          <div id="inter_details" hidden>
-            <label><b>Details of Intermediate (10 +2) : </b></label> <br>
-            <input class="ms-5" type="text" placeholder="Name of Institution" name="inter_inst" id="inter_inst">
-            <input class="ms-5" type="text" placeholder="Board" name="inter_board" id="inter_board">
-            <input class="ms-5" type="text" placeholder="Year of Passing" name="inter_year" id="inter_year">
-            <input class="ms-5" type="text" placeholder="(%) Overall Percentage" name="inter_percent"
-              id="inter_percent"><br>
-          </div><br>
-
-          <div id="ug_details" hidden>
-            <label><b>Details of Under Graduate (UG) : </b></label> <br>
-            <input class="ms-5" type="text" placeholder="Course Name" name="ug_inst" id="ug_inst">
-            <input class="ms-5" type="text" placeholder="Name of Inst./University" name="ug_board" id="ug_board">
-            <input class="ms-5" type="text" placeholder="Year of Passing" name="ug_year" id="ug_year">
-            <input class="ms-5" type="text" placeholder="(%)/CGPA" name="ug_percent" id="ug_percent"><br>
-          </div><br>
-
-          <div id="pg_details" hidden>
-            <label><b>Details of Post Graduate (PG) : </b></label> <br>
-            <input class="ms-5" type="text" placeholder="Course Name" name="pg_inst" id="pg_inst">
-            <input class="ms-5" type="text" placeholder="Name of Inst./University" name="pg_board" id="pg_board">
-            <input class="ms-5" type="text" placeholder="Year of Passing" name="pg_year" id="pg_year">
-            <input class="ms-5" type="text" placeholder="(%)/CGPA" name="pg_percent" id="pg_percent"><br>
-          </div><br>
-
-          <div id="res_details" hidden>
-            <label><b>Details of Ph.D : </b></label> <br>
-            <input class="ms-5" type="text" placeholder="Course Name" name="res_inst" id="res_inst">
-            <input class="ms-5" type="text" placeholder="Name of University" name="res_board" id="res_board">
-            <input class="ms-5" type="text" placeholder="Year of Passing" name="res_year" id="res_year">
-            <input class="ms-5" type="text" placeholder="(%)/CGPA" name="res_percent" id="res_percent"><br>
-          </div><br>
-
-          <div id="oth_details" hidden>
-            <label><b>Details of Other Course : </b></label> <br>
-            <input class="ms-5" type="text" placeholder="Name of Course" name="oth_cn" id="oth_cn">
-            <input class="ms-5" type="text" placeholder="Name of Institution" name="oth_inst" id="oth_inst">
-            <input class="ms-5" type="text" placeholder="Board" name="oth_board" id="oth_board">
-            <input class="ms-5" type="text" placeholder="Year of Passing" name="oth_year" id="oth_year">
-            <input class="ms-5" type="text" placeholder="(%) Overall Percentage" name="oth_percent"
-              id="oth_percent"><br>
-          </div>
-        </div>
-
-      </div>
-
-
-
-      <div class="container-sm pt-3 my-5 border">
-        <h3><u>INITIAL Appointment:</u></h3>
-
-        <label><b>First Designation : </b></label>
-        <input size="40" class="mt-3 ms-auto" list="desig" type="text"
-          placeholder="Designation of First Appointment in University" name="f_desig" id="f_desig" required>
-        <datalist id="desig">
-          <option value="Junior Office Assistant">
-          <option value="Assistant Registrar">
-          <option value="Registrar">
-          <option value="Computer Operator">
-          <option value="System Analyst">
-        </datalist>
-
-        <label><b>Department :</b></label>
-        <input class="mt-3 ms-auto" type="text" placeholder="Initial Department" name="init_dept" id="init_dept"
-          required>
-
-        <label><b>Date of Joining:</b></label>
-        <input class="mt-3 ms-auto" type="date" placeholder="First Date of Appointment" name="doj" id="doj"
-          onfocusout="calcrtd()" required><br>
-
-        <label><b>Date of Retirement:</b></label>
-        <input class="mt-3 ms-auto" type="text" placeholder="Date of Retirement" name="dor" id="dor" readonly>
-
-        <label><b>Pay Scale/Level/Fixed:</b></label>
-        <input class="mt-3 ms-auto" type="text" placeholder="Initial Pay Scale/Level at the time of First Appointment"
-          name="f_bp" id="f_bp" required>
-
-        <label><b>Grade Pay :</b></label>
-        <input class="mt-3 ms-auto" type="text" placeholder="Initial Grade Pay" name="f_gp" id="f_gp" required><br>
-
-        <label><b>Order Number and Date:</b></label>
-        <input size="10" class="mt-3 ms-auto" type="text" placeholder="Order Number" name="odn" id="odn" required>
-        <input size="10" class="mt-3 ms-auto" type="date" placeholder="Office Order Date" name="odrd" id="odrd"
-          required>
-
-        <label for="nature_fa" class="mt-3 form-label"><b>Nature of First Appointment:</b></label>
-        <input size="10" list="nature_fas" name="nature_fa" id="nature_fa" placeholder="Nature" required>
-        <datalist id="nature_fas">
-          <option value="Regular">
-          <option value="Daily Wager">
-          <option value="Master Rol">
-          <option value="Contract">
-        </datalist>
-
-        <label for="grp" class="mt-3 form-label"><b>Group:</b></label>
-        <input size="7" list="grp-list" name="grp" id="grp" placeholder="Group A/B/C" required>
-        <datalist id="grp-list">
-          <option value="A">
-          <option value="B">
-          <option value="C">
-        </datalist>
-
-        <summary class="ms-2">Need to Upload Office Order</summary>
-
-      </div>
-
       <div class="container-sm pt-3 my-5 border">
         <h3><u>Present Status:</u></h3>
 
@@ -320,119 +161,6 @@
 
 
       <div class="container-sm pt-3 my-5 border">
-        <h3><u>DEPENDANTS:</u></h3>
-        <div>
-          <label for="depend_1" class="mt-3 form-label"><b>Dependent 1:</b></label>
-          <input size="30" list="dep_1" name="depend_1" id="depend_1" placeholder="Father/Mother/Spouse/Son/Daughter"
-            onchange="document.getElementById('depend_name_1').disabled=false, document.getElementById('dep_1_photo').disabled=false">
-          <datalist id="dep_1">
-            <option value="Father">
-            <option value="Mother">
-            <option value="Spouse">
-            <option value="Son">
-            <option value="Daughter">
-          </datalist>
-          <input type="text" name="depend_name_1" id="depend_name_1" placeholder="Enter Full Name"
-            onchange="document.getElementById('depend_dob_1').disabled=false" disabled>
-          <input type="date" name="depend_dob_1" id="depend_dob_1" placeholder="Date of Birth"
-            onchange="document.getElementById('depend_2').disabled=false" disabled>
-
-          <label for="dep_1_photo" class="mt-3 form-label">Photograph :-</label>
-          <input type="file" id="dep_1_photo" name="dep_1_photo" disabled />
-          <textarea id="depend_1_photo" name="depend_1_photo" hidden></textarea>
-
-        </div>
-
-        <div>
-          <label for="depend_2" class="mt-3 form-label"><b>Dependent 2:</b></label>
-          <input size="30" list="dep_2" name="depend_2" id="depend_2" placeholder="Father/Mother/Spouse/Son/Daughter"
-            onchange="document.getElementById('depend_name_2').disabled=false, document.getElementById('dep_2_photo').disabled=false"
-            disabled>
-          <datalist id="dep_2">
-            <option value="Father">
-            <option value="Mother">
-            <option value="Spouse">
-            <option value="Son">
-            <option value="Daughter">
-          </datalist>
-          <input type="text" name="depend_name_2" id="depend_name_2" placeholder="Enter Full Name"
-            onchange="document.getElementById('depend_dob_2').disabled=false" disabled>
-          <input type="date" name="depend_dob_2" id="depend_dob_2" placeholder="Date of Birth"
-            onchange="document.getElementById('depend_3').disabled=false" disabled>
-
-          <label for="dep_2_photo" class="mt-3 form-label">Photograph :-</label>
-          <input type="file" id="dep_2_photo" name="dep_2_photo" disabled />
-          <textarea id="depend_2_photo" name="depend_2_photo" hidden></textarea>
-
-        </div>
-
-        <div>
-          <label for="depend_3" class="mt-3 form-label"><b>Dependent 3:</b></label>
-          <input size="30" list="dep_3" name="depend_3" id="depend_3" placeholder="Father/Mother/Spouse/Son/Daughter"
-            onchange="document.getElementById('depend_name_3').disabled=false, document.getElementById('dep_3_photo').disabled=false"
-            disabled>
-          <datalist id="dep_3">
-            <option value="Father">
-            <option value="Mother">
-            <option value="Spouse">
-            <option value="Son">
-            <option value="Daughter">
-          </datalist>
-          <input type="text" name="depend_name_3" id="depend_name_3" placeholder="Enter Full Name"
-            onchange="document.getElementById('depend_dob_3').disabled=false" disabled>
-          <input type="date" name="depend_dob_3" id="depend_dob_3" placeholder="Date of Birth"
-            onchange="document.getElementById('depend_4').disabled=false" disabled>
-
-          <label for="dep_3_photo" class="mt-3 form-label">Photograph :-</label>
-          <input type="file" id="dep_3_photo" name="dep_3_photo" disabled />
-          <textarea id="depend_3_photo" name="depend_3_photo" hidden></textarea>
-        </div>
-
-        <div>
-          <label for="depend_4" class="mt-3 form-label"><b>Dependent 4:</b></label>
-          <input size="30" list="dep_4" name="depend_4" id="depend_4" placeholder="Father/Mother/Spouse/Son/Daughter"
-            onchange="document.getElementById('depend_name_4').disabled=false, document.getElementById('dep_4_photo').disabled=false"
-            disabled>
-          <datalist id="dep_4">
-            <option value="Father">
-            <option value="Mother">
-            <option value="Spouse">
-            <option value="Son">
-            <option value="Daughter">
-          </datalist>
-          <input type="text" name="depend_name_4" id="depend_name_4" placeholder="Enter Full Name"
-            onchange="document.getElementById('depend_dob_4').disabled=false" disabled>
-          <input type="date" name="depend_dob_4" id="depend_dob_4" placeholder="Date of Birth"
-            onchange="document.getElementById('depend_5').disabled=false" disabled>
-
-          <label for="dep_4_photo" class="mt-3 form-label">Photograph :-</label>
-          <input type="file" id="dep_4_photo" name="dep_4_photo" disabled />
-          <textarea id="depend_4_photo" name="depend_4_photo" hidden></textarea>
-        </div>
-
-        <div>
-          <label for="depend_5" class="mt-3 form-label"><b>Dependent 5:</b></label>
-          <input size="30" list="dep_5" name="depend_5" id="depend_5" placeholder="Father/Mother/Spouse/Son/Daughter"
-            onchange="document.getElementById('depend_name_5').disabled=false, document.getElementById('dep_5_photo').disabled=false"
-            disabled>
-          <datalist id="dep_5">
-            <option value="Father">
-            <option value="Mother">
-            <option value="Spouse">
-            <option value="Son">
-            <option value="Daughter">
-          </datalist>
-          <input type="text" name="depend_name_5" id="depend_name_5" placeholder="Enter Full Name"
-            onchange="document.getElementById('depend_dob_5').disabled=false" disabled>
-          <input type="date" name="depend_dob_5" id="depend_dob_5" placeholder="Date of Birth" disabled>
-
-          <label for="dep_5_photo" class="mt-3 form-label">Photograph :-</label>
-          <input type="file" id="dep_5_photo" name="dep_5_photo" disabled />
-          <textarea id="depend_5_photo" name="depend_5_photo" hidden></textarea>
-        </div>
-      </div>
-
-      <div class="container-sm pt-3 my-5 border">
         <h3><u>UPLOAD: Required Documents & Photographs</u></h3>
 
         <div id="personnel_photo">
@@ -451,14 +179,6 @@
           <textarea id="emp_signature" name="emp_signature" hidden></textarea>
         </div>
 
-        <div id="int_appointmnet">
-          <label for="int_aptt" class="mt-3 form-label">Initial Appointment Order:-</label>&emsp; &emsp; &emsp; &emsp;
-          &emsp;
-          &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-          <input type="file" id="int_aptt" name="int_aptt" accept=".jpg, .jpeg, .png" onchange="initial_apt()" />
-          <!-- <img src="" id="preview_sig" height="75" /> -->
-          <textarea id="int_apt" name="int_apt" hidden></textarea>
-        </div>
 
         <div id="prst_appointmnet">
           <label for="prst_aptt" class="mt-3 form-label">Present post Appointment Order:-</label>&emsp; &emsp; &emsp; &emsp;
@@ -469,61 +189,6 @@
           <textarea id="prst_apt" name="prst_apt" hidden></textarea>
         </div>
 
-        <div id="10_doc" hidden>
-          <label for="metric_doc" class="mt-3 form-label">Metric (10) Certificate/Marksheet which is having date of
-            birth :-</label>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-          <input type="file" id="metric_doc" name="metric_doc" accept=".jpg, .jpeg, .png" />
-          <!-- <img src="" id="preview_10" height="75" /> -->
-          <textarea id="emp_10" name="emp_10" hidden></textarea>
-        </div>
-
-        <div id="12_doc" hidden>
-          <label for="inter_doc" class="mt-3 form-label">Intermediate (12) Certificate/Marksheet :-</label>&nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <input type="file" id="inter_doc" name="inter_doc" accept=".jpg, .jpeg, .png" />
-          <!-- <img src="" id="preview_12" height="75" /> -->
-          <textarea id="emp_12" name="emp_12" hidden></textarea>
-        </div>
-
-        <div id="ug_doc" hidden>
-          <label for="ug_doc" class="mt-3 form-label">Under Graduate (UG) Final Marksheet/Transcript :-</label>&nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &nbsp;
-          <input type="file" id="underg_doc" name="underg_doc" accept=".jpg, .jpeg, .png" />
-          <!-- <img src="" id="preview_ug" height="75" /> -->
-          <textarea id="emp_ug" name="emp_ug" hidden></textarea>
-        </div>
-
-        <div id="pg_doc" hidden>
-          <label for="pg_doc" class="mt-3 form-label">Post Graduate (PG) Final Marksheet/Transcript :-</label>&nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &emsp;
-          <input type="file" id="postg_doc" name="postg_doc" accept=".jpg, .jpeg, .png" />
-          <!-- <img src="" id="preview_pg" height="75" /> -->
-          <textarea id="emp_pg" name="emp_pg" hidden></textarea>
-        </div>
-
-        <div id="res_doc" hidden>
-          <label for="res_doc" class="mt-3 form-label">Ph.D Deegre:-</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <input type="file" id="r_doc" name="r_doc" accept=".jpg, .jpeg, .png" />
-          <!-- <img src="" id="preview_res" height="75" /> -->
-          <textarea id="emp_res" name="emp_res" hidden></textarea>
-        </div>
-
-        <div id="oth_doc" hidden>
-          <label for="oth_doc" class="mt-3 form-label">Course Passed Certificate or Transcript :-</label> &nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <input type="file" id="other_doc" name="other_doc" accept=".jpg, .jpeg, .png" />
-          <!-- <img src="" id="preview_oth" height="75" /> -->
-          <textarea id="emp_oth" name="emp_oth" hidden></textarea>
-        </div>
-
-      </div>
       <div class="container-sm pt-3 my-5 border" id="loginpass">
         <h3><u>Account Credentials</u></h3>
         <label class="pt-3"><b>User Name:</b></label>
@@ -537,9 +202,9 @@
           <label class="pt-2"><b>Category:</b></label>
           <select id="catg" name="catg">
             <option value="Administration">Administration</option>
-            <option value="Finance">Finance</option>
-            <option value="Faculty">Faculty</option>
-            <option value="NT">Non-Teaching</option>
+            <option value="UG_Counter">UG Counter</option>
+            <option value="PG_Counter">PG Counter</option>
+            <option value="Degree_counter">Degree Counter</option>
           </select required>
       </div>
 
@@ -622,24 +287,6 @@ function originally(){
       }
     }
 
-    function initial_apt() {
-      const file = document.getElementById('int_aptt').files[0];
-      const reader = new FileReader();
-
-      if (file) {
-        reader.readAsDataURL(file);
-        reader.addEventListener("load", () => {
-          var x = reader.result;
-          // convert image file to base64 string
-          // document.getElementById('preview_sig').src = x;
-          document.getElementById('int_apt').innerText = x;
-        }, false);
-      } else {
-        alert("Please upload the Initial Appointment Order");
-        process.exit();
-      }
-    }
-
     function prst_apt() {
       const file = document.getElementById('prst_aptt').files[0];
       const reader = new FileReader();
@@ -658,241 +305,6 @@ function originally(){
       }
     }
 
-    function emp_metric() {
-      // alert("hi");
-      if (document.getElementById('10_doc').hidden == false) {
-        const file = document.getElementById('metric_doc').files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById('emp_10').innerText = x;
-          }, false);
-          // console.log("10 ke x ki value", x);
-        } else {
-          alert("Please upload the Metric Document");
-          process.exit();
-        }
-      }
-    };
-
-    function emp_inter() {
-      if (document.getElementById("12_doc").hidden == false) {
-        const file = document.getElementById("inter_doc").files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById("emp_12").innerText = x;
-          }, false);
-        } else {
-          alert("Please upload the Intermediate Document");
-          process.exit();
-        };
-      };
-    };
-
-    function emp_u_g() {
-      if (document.getElementById("ug_doc").hidden == false) {
-        const file = document.getElementById("underg_doc").files[0];
-        const reader = new FileReader;
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById('emp_ug').innerText = x;
-          }, false);
-        } else {
-          alert("Please upload the Undergraduate document");
-          process.exit();
-        };
-      };
-    };
-
-    function emp_p_g() {
-      if (document.getElementById("pg_doc").hidden == false) {
-        const file = document.getElementById('postg_doc').files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById('emp_pg').innerText = x;
-          }, false);
-        } else {
-          alert("Please upload the Post Graduate Document");
-          process.exit();
-        };
-      };
-    };
-
-    function emp_r() {
-      if (document.getElementById("res_doc").hidden == false) {
-        const file = document.getElementById('r_doc').files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById('emp_res').innerText = x;
-          }, false);
-        } else {
-          alert("Please upload the Research Document");
-          process.exit();
-        };
-      };
-    };
-
-    function emp_o() {
-      if (document.getElementById("oth_doc").hidden == false) {
-        const file = document.getElementById('other_doc').files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById('emp_oth').innerText = x;
-          }, false);
-        } else {
-          alert("Please upload the Document");
-          process.exit();
-        };
-      };
-    };
-
-    function depen_1() {
-      if (document.getElementById("dep_1_photo").disabled == false) {
-        const file = document.getElementById("dep_1_photo").files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById("depend_1_photo").innerText = x;
-          }, false)
-          // console.log("Value of dep_1", document.getElementById("depend_1_photo").value)
-        } else {
-          alert("Please upload the photograph of" + " " + document.getElementById("depend_1").value);
-          process.exit();
-        }
-      };
-    };
-
-    function depen_2() {
-      if (document.getElementById("dep_2_photo").disabled == false) {
-        const file = document.getElementById("dep_2_photo").files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById("depend_2_photo").innerText = x;
-          }, false)
-          // console.log("Value of dep_1", document.getElementById("depend_1_photo").value)
-        } else {
-          alert("Please upload the photograph of" + " " + document.getElementById("depend_2").value);
-          process.exit();
-        }
-      };
-    };
-
-
-    function depen_3() {
-      if (document.getElementById("dep_3_photo").disabled == false) {
-        const file = document.getElementById("dep_3_photo").files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById("depend_3_photo").innerText = x;
-          }, false)
-          // console.log("Value of dep_1", document.getElementById("depend_1_photo").value)
-        } else {
-          alert("Please upload the photograph of" + " " + document.getElementById("depend_3").value);
-          process.exit();
-        }
-      };
-    };
-
-    function depen_4() {
-      if (document.getElementById("dep_4_photo").disabled == false) {
-        const file = document.getElementById("dep_4_photo").files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById("depend_4_photo").innerText = x;
-          }, false)
-          // console.log("Value of dep_1", document.getElementById("depend_1_photo").value)
-        } else {
-          alert("Please upload the photograph of" + " " + document.getElementById("depend_4").value);
-          process.exit();
-        }
-      };
-    };
-
-    function depen_5() {
-      if (document.getElementById("dep_5_photo").disabled == false) {
-        const file = document.getElementById("dep_5_photo").files[0];
-        const reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(file);
-          reader.addEventListener("load", () => {
-            var x = reader.result;
-            document.getElementById("depend_5_photo").innerText = x;
-          }, false)
-          // console.log("Value of dep_1", document.getElementById("depend_1_photo").value)
-        } else {
-          alert("Please upload the photograph of" + " " + document.getElementById("depend_5").value);
-          process.exit();
-        }
-      };
-    };
-
-    // function addnewemp() {
-
-    // //   if (document.getElementById("aeid").value == 0) {
-    // //     alert("Kindly enter the Employee ID")
-    // //   } else {
-
-    // //     // var y = document.getElementById("aeid").value;
-
-    // //     // alert("Get details for Employee of ID : " + y);
-
-    //     event.preventDefault();
-    //     var x = $('#aeid').serialize();
-    //    console.log("HElow");
-    //     $(document).ready(function () {
-    //       $.ajax({
-    //         url: 'http://localhost:8080/addnew',
-    //         type: 'GET',
-    //         data: x, 
-    //         dataType: 'json',
-    //         contentType: 'application/x-www-form-urlencoded',
-    //         // processData: false,
-    //         success: function (data, textStatus, request) {
-    //           // console.log("Value from server of data is: " + data);
-    //           // alert("Value from server of data is: " + data.eid);
-    //           if (data.eid == undefined) {
-    //             document.getElementById("aftadd").hidden = false;
-    //             document.getElementById("sbtn").hidden = false;
-    //             document.getElementById("eidadd").hidden = true;
-    //             document.getElementById("eid").value = document.getElementById("aeid").value;
-    //             document.getElementById("ext").disabled = false;
-    //           } else {
-    //             alert("The Entered Id is already exist.")
-    //           }
-    //         }
-    //       });
-    //     });
-
-    //   // };
-    // };
-
     function reload() {
       window.open("login.html", "_parent");
     }
@@ -903,79 +315,6 @@ function originally(){
       }
     }
 
-
-    function functionoth() {
-
-      if (document.getElementById('oth_details').hidden == true) {
-        document.getElementById('oth_inst').value = null;
-        document.getElementById('oth_board').value = null;
-        document.getElementById('oth_year').value = null;
-        document.getElementById('oth_percent').value = null;
-      }
-
-    };
-
-    function functionmetric() {
-
-      if (document.getElementById('metric_details').hidden == true) {
-        document.getElementById('metric_inst').value = null;
-        document.getElementById('metric_board').value = null;
-        document.getElementById('metric_year').value = null;
-        document.getElementById('metric_percent').value = null;
-        document.getElementById('inter').disabled = true;
-      }else{
-        document.getElementById('inter').disabled = false;
-      }
-    };
-
-    function functioninter() {
-
-      if (document.getElementById('inter_details').hidden == true) {
-        document.getElementById('inter_inst').value = null;
-        document.getElementById('inter_board').value = null;
-        document.getElementById('inter_year').value = null;
-        document.getElementById('inter_percent').value = null;
-        document.getElementById('ug').disabled = true;
-      }else{
-        document.getElementById('ug').disabled = false;
-      }
-    };
-
-    function functionug() {
-
-      if (document.getElementById('ug_details').hidden == true) {
-        document.getElementById('ug_inst').value = null;
-        document.getElementById('ug_board').value = null;
-        document.getElementById('ug_year').value = null;
-        document.getElementById('ug_percent').value = null;
-        document.getElementById('pg').disabled = true;
-      }else{
-        document.getElementById('pg').disabled = false;
-      }
-    };
-
-    function functionpg() {
-
-      if (document.getElementById('pg_details').hidden == true) {
-        document.getElementById('pg_inst').value = null;
-        document.getElementById('pg_board').value = null;
-        document.getElementById('pg_year').value = null;
-        document.getElementById('pg_percent').value = null;
-        document.getElementById('phd').disabled = true;
-      }else{
-        document.getElementById('phd').disabled = false;
-      }
-    };
-
-    function functionres() {
-
-      if (document.getElementById('res_details').hidden == true) {
-        document.getElementById('res_inst').value = null;
-        document.getElementById('res_board').value = null;
-        document.getElementById('res_year').value = null;
-        document.getElementById('res_percent').value = null;
-      }
-    };
 
     function sameaddr() {
 
@@ -1017,44 +356,6 @@ function originally(){
 
     };
 
-    function calcrtd() {
-
-      const v = new Date(document.getElementById("dob").value);
-      const d = new Date(v.setFullYear(v.getFullYear() + 60));
-
-      if (v.getDate() > 1) {
-        if (d.getMonth() == 0 || d.getMonth() == 2 || d.getMonth() == 4 || d.getMonth() == 6 || d.getMonth() == 7 || d
-          .getMonth() == 9 ||
-          d.getMonth() == 11) {
-          var NoTimeDate = '31' + '-' + (d.getMonth() + 1) + '-' + d.getFullYear()
-          document.getElementById("dor").value = NoTimeDate;
-        } else if (d.getMonth() == 3 || d.getMonth() == 5 || d.getMonth() == 8 || d.getMonth() == 10) {
-          var NoTimeDate = '30' + '-' + (d.getMonth() + 1) + '-' + d.getFullYear()
-          document.getElementById("dor").value = NoTimeDate;
-        } else if (d.getMonth() == 1) {
-          var NoTimeDate = '28' + '-' + (d.getMonth() + 1) + '-' + d.getFullYear()
-          // var NoTimeDate = '30' + '-' + d.getMonth() + '-' + d.getFullYear()
-          document.getElementById("dor").value = NoTimeDate;
-        }
-      } else {
-        if (d.getMonth() == 4 || d.getMonth() == 6 || d.getMonth() == 7 || d.getMonth() == 9 || d.getMonth() == 11) {
-          var NoTimeDate = '30' + '-' + d.getMonth() + '-' + d.getFullYear()
-          document.getElementById("dor").value = NoTimeDate;
-        } else if (d.getMonth() == 1 || d.getMonth() == 3 || d.getMonth() == 5 || d.getMonth() == 8 || d.getMonth() ==
-          10) {
-          var NoTimeDate = '31' + '-' + d.getMonth() + '-' + d.getFullYear()
-          document.getElementById("dor").value = NoTimeDate;
-        } else if (d.getMonth() == 2) {
-          var NoTimeDate = '28' + '-' + d.getMonth() + '-' + d.getFullYear()
-          // var NoTimeDate = '30' + '-' + d.getMonth() + '-' + d.getFullYear()
-          document.getElementById("dor").value = NoTimeDate;
-        } else if (d.getMonth() == 0) {
-          var NoTimeDate = '31' + '-12' + '-' + (d.getFullYear() - 1)
-          document.getElementById("dor").value = NoTimeDate;
-        }
-      }
-    }
-
 
     function formsubmit() {
 
@@ -1062,19 +363,7 @@ function originally(){
 
       emp_photograph();
       emp_sig();
-      initial_apt();
       prst_apt();
-      emp_metric();
-      emp_inter();
-      emp_u_g();
-      emp_p_g();
-      emp_r();
-      emp_o();
-      depen_1();
-      depen_2();
-      depen_3();
-      depen_4();
-      depen_5();
 
       // console.log("photo dep_1", document.getElementById("dep_1_photo").disabled)
 
