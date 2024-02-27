@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="main.css">
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/jquery-3.7.1.js"></script>
+
+  
   <link rel="icon" type="image/x-icon" href="/images/newlogo.jpeg">
 
   
@@ -88,6 +90,7 @@
         <input type="checkbox" class="form-check-input" name="same_addr" id="same_addr" onclick="sameaddr()"
           onchange=" showorhide()">
         <label class="form-check-label" for="same_addr">Correspondance Address is same as Permanent</label>
+        
       </div>
 
       <div class="pt-1" id="corr_addr">
@@ -382,7 +385,7 @@ function originally(){
 
         $(document).ready(function () {
           $.ajax({
-            url: 'http://localhost:8080/formsubmit',
+            url: 'http://localhost:8081/formsubmit',
             type: 'POST',
             data: x,
             dataType: 'json',
@@ -396,7 +399,7 @@ function originally(){
               } else{
                 alert("Data Not Saved");
               }
-                // window.open("login.html", "_parent");
+                window.open("login.html", "_parent");
               // } else {
                 // alert("Please fill the form completely");
               // }
