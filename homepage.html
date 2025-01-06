@@ -176,16 +176,17 @@
     function chngpas() {
         event.preventDefault()
         // var tok = localStorage.getItem('token');
-        alert("Token is ", Headers)
+        var token = document.cookie.match('(^|;)\\s*' + "token" + '\\s*=\\s*([^;]+)')?.pop() || '';
+        // alert("Token is ", tokN)
         $(document).ready(function () {
             $.ajax({
                 url: 'http://localhost:8081/chngpas',
                 type: 'POST',
                 dataType: 'json',
                 contentType: 'application/x-www-form-urlencoded',
-                // headers: {
-                //     'Authorization': 'Bearer ' + token
-                // },
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                },
                 success: function (data, textStatus, request) {
                     if (data.success === "sucess") {
                         alert(data.message)
