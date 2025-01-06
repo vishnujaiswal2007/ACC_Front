@@ -177,7 +177,6 @@
         event.preventDefault()
         // var tok = localStorage.getItem('token');
         var token = document.cookie.match('(^|;)\\s*' + "token" + '\\s*=\\s*([^;]+)')?.pop() || '';
-        // alert("Token is ", tokN)
         $(document).ready(function () {
             $.ajax({
                 url: 'http://localhost:8081/chngpas',
