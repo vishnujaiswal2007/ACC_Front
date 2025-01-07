@@ -98,6 +98,8 @@
             success: function (data, textStatus, request) {
               if (data.status === 'sucess') {
                 document.cookie = "token=" + data.token;
+                document.cookie = "Username = " + data.Username;
+                document.cookie = "Designation = " + data.Designation;
                 window.open("http://192.168.1.2:5505/homepage.html", "_parent");
                 // parent.location.href = './homepage.html';
               } else {
