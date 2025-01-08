@@ -191,8 +191,8 @@ function prof(){
         var token = document.cookie.match('(^|;)\\s*' + "token" + '\\s*=\\s*([^;]+)')?.pop() || '';
         $(document).ready(function () {
             $.ajax({
-                url: 'http://localhost:8081/chngpas',
-                type: 'POST',
+                url: 'http://192.168.1.2:8081/chngpas',
+                type: 'post',
                 dataType: 'json',
                 contentType: 'application/x-www-form-urlencoded',
                 headers: {
