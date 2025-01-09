@@ -127,8 +127,8 @@
 
                         <!-- <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="dropdown">Profile</a> -->
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" onclick="chngpas()">Change Password</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Post Graduate Courses</a></li>
+                            <!--<li><a class="dropdown-item" href="#" onclick="chngpas()">Change Password</a></li>
+                             <li><a class="dropdown-item" href="#">Post Graduate Courses</a></li>
                         <li><a class="dropdown-item" href="#">Professional Courses</a></li> -->
                             <li>
                                 <hr class="dropdown-divider">
@@ -141,17 +141,42 @@
         </div>
     </nav>
 
-    <!-- Carousel -->
+    <!-- Password change Form-->
+
+    <!-- <form class="container pt-5 my-5 border" id="updpas_details" method="post"> -->
+
+    <div class="container pt-3" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  text-align: center;">
+        <img src="./images/chngpass.png" ; width="100" height="100">
+        <h2>Change Password</h2>
+        <label>
+        <label class="pt-3" for="Old_password">Old Password</label>
+        <input type="password" placeholder="Password" name="Old_password" id="Old_password"><br>
+        <label class="pt-3" for="N_password">New Password</label>
+        <input type="password" placeholder="Password" name="N_password" id="N_password"><br>
+        <label class="pt-3" for="CN_password">Confirm New Password</label>
+        <input type="password" placeholder="Password" name="CN_password" id="CN_password"><br>
+        </label>
+        <button id="lg_btn" class="btn btn-primary mt-3 float-left" onclick="entpass()">Submit</button>
+      </div>
+
+    
+
+
+    <!--
+
+    //Carousel
+
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-        <!-- Indicators/dots -->
+        // Indicators/dots 
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
         </div>
 
-        <!-- The slideshow/carousel -->
+    //The slideshow/carousel
+         
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="./images/101623137489.jpg" alt="No image found" class="d-block" style="width:100%">
@@ -165,7 +190,7 @@
             </div>
         </div>
 
-        <!-- Left and right controls/icons -->
+    //Left and right controls/icons
         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -173,6 +198,7 @@
             <span class="carousel-control-next-icon"></span>
         </button>
     </div>
+-->
 
 </body>
 
@@ -185,13 +211,27 @@ function prof(){
 }
 
 
-    function chngpas() {
+    function entpass() {
         event.preventDefault()
-        // var tok = localStorage.getItem('token');
         var token = document.cookie.match('(^|;)\\s*' + "token" + '\\s*=\\s*([^;]+)')?.pop() || '';
         $(document).ready(function () {
+            if (document.getElementById("Old_password").value == 0 ||
+          document.getElementById("N_password").value == 0 ||
+          document.getElementById("CN_password").value == 0) {
+            alert("Please fill the form correctly");
+            // emp_photograph();
+            // emp_sig();
+          } else if (confirm("Are your Sure to submit. Data will be final") == true){
+            var Old_password = document.getElementById("Old_password").value
+            var N_password = document.getElementById("N_password").value
+            var CN_password = document.getElementById("CN_password").value
             $.ajax({
-                url: 'http://192.168.1.2:8081/chngpas',
+                url: 'http://192.168.1.2:8081/updpas',
+                data: {
+                    Old_password : Old_password,
+                    N_password : N_password,
+                    CN_password : CN_password
+                },
                 type: 'post',
                 dataType: 'json',
                 contentType: 'application/x-www-form-urlencoded',
@@ -200,15 +240,17 @@ function prof(){
                 },
                 success: function (data, textStatus, request) {
                     if (data.status === "sucess") {
-                        window.open("http://192.168.1.2:5505/chngpass.html", "_parent");
+                        alert(data.message)
+                        window.open("http://192.168.1.2:5505/login.html", "_parent");
                     } else {
-                        // alert(data.message)
-                        alert("Some Thing Went Wrong")
+                        alert(data.message)
                     }
                 }
             })
+        }
         })
-    }
+       
+}
 
     function exit() {
         if (confirm("Are you sure for Exit") == true) {
